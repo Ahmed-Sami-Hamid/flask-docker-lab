@@ -5,9 +5,9 @@ RUN groupadd -g 10001 appuser && \
 
 WORKDIR /app
 
-COPY --chown=appuser:appuser app/app.py .
-
 RUN pip install --no-cache-dir flask
+
+COPY --chown=appuser:appuser app/app.py /app/app.py
 
 USER 10001
 
